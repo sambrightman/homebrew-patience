@@ -1,5 +1,7 @@
 # homebrew-patience
 
+Perhaps there isn't a need to make it hard to use Python 2 immediately that it is unsupported upstream?
+
 ## How do I install these formulae?
 `brew install sambrightman/patience/<formula>`
 
