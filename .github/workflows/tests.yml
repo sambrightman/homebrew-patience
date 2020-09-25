@@ -3,6 +3,9 @@ on:
   push:
     branches: master
   pull_request:
+  schedule:
+    - cron: '00 00 * * 5'
+  workflow_dispatch:
 jobs:
   test-bot:
     runs-on: ${{ matrix.os }}
