@@ -23,7 +23,7 @@ class PythonAT2717 < Formula
   depends_on "readline"
   depends_on "sqlite"
   unless OS.mac?
-    depends_on "linuxbrew/xorg/xorg" if build.with? "tcl-tk"
+    depends_on "linuxbrew/xorg/xorg" if build.with? "tcl-tk" # rubocop:disable FormulaAudit/OptionDeclarations, Style/DisableCopsWithinSourceCodeDirective
     depends_on "bzip2"
     depends_on "ncurses"
     depends_on "zlib"
