@@ -5,6 +5,12 @@ class PythonAT2 < Formula
   sha256 "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43"
   revision 3
 
+  bottle do
+    root_url "https://github.com/sambrightman/homebrew-patience/releases/download/python@2-2.7.18_3"
+    sha256 monterey:     "9baa5bcfe6814662c11e40f5dd958c808e700960fef0a16f1fb41b3dc4894184"
+    sha256 x86_64_linux: "904cb97c1314ba8a94e9ab94b18f82af09f775fee5f53b743f231b3badff5e13"
+  end
+
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
   pour_bottle? do
