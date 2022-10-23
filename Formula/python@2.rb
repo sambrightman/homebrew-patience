@@ -3,7 +3,7 @@ class PythonAT2 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz"
   sha256 "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43"
-  revision 1
+  revision 2
 
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
@@ -27,6 +27,8 @@ class PythonAT2 < Formula
     depends_on "ncurses"
     depends_on "zlib"
   end
+
+  uses_from_macos "libxcrypt"
 
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/b2/40/4e00501c204b457f10fe410da0c97537214b2265247bc9a5bc6edd55b9e4/setuptools-44.1.1.zip"
