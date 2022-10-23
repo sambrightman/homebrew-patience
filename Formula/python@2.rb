@@ -3,7 +3,7 @@ class PythonAT2 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz"
   sha256 "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43"
-  revision 2
+  revision 3
 
   # setuptools remembers the build flags python is built with and uses them to
   # build packages later. Xcode-only systems need different flags.
@@ -43,6 +43,14 @@ class PythonAT2 < Formula
   resource "wheel" do
     url "https://files.pythonhosted.org/packages/c0/6c/9f840c2e55b67b90745af06a540964b73589256cb10cc10057c87ac78fc2/wheel-0.37.1.tar.gz"
     sha256 "e9a504e793efbca1b8e0e9cb979a249cf4a0a7b5b8c9e8b65a5e39d49529c1c4"
+  end
+
+  # patch for MACOSX_DEPLOYMENT_TARGET on macOS >= 11.0
+  # this will never be backported to 2.7, so maintain patch privately
+  # https://bugs.python.org/issue42504
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/47d53fa0ac756b623ae56b4665ba9e52cfa3bab5/patches/python@2/0001-Squash-of-bpo-42504-fixes-backported-to-2.7.patch"
+    sha256 "ba72b01936d4a35a1e97e97b888e2093e10700df0b682733adb2661ad7fd6878"
   end
 
   def lib_cellar
