@@ -3,7 +3,7 @@ class PythonAT2 < Formula
   homepage "https://www.python.org/"
   url "https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tar.xz"
   sha256 "b62c0e7937551d0cc02b8fd5cb0f544f9405bafc9a54d3808ed4594812edef43"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https://github.com/sambrightman/homebrew-patience/releases/download/python@2-2.7.18_3"
@@ -57,6 +57,38 @@ class PythonAT2 < Formula
   patch do
     url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/47d53fa0ac756b623ae56b4665ba9e52cfa3bab5/patches/python@2/0001-Squash-of-bpo-42504-fixes-backported-to-2.7.patch"
     sha256 "ba72b01936d4a35a1e97e97b888e2093e10700df0b682733adb2661ad7fd6878"
+  end
+
+  # patches for Apple Silicon
+  # this will never be backported to 2.7, so maintain patch privately
+  # https://github.com/pyenv/pyenv/pull/2061
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0001-Detect-arm64-in-configure.patch"
+    sha256 "55ecbb6c1b8e2e851dcfed3b26a9d8269739af55ade8d164563875cab6d44a6b"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0002-Fix-macOS-_tkinter-use-of-Tck-Tk-in-Library-Framewor.patch"
+    sha256 "de212642dc73941397b686a5b4310efc7f05147b6c72e46c8508f73a90adc056"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0003-Support-arm64-in-Mac-Tools-pythonw.patch"
+    sha256 "a2ff3ba40f6eebb85dc58b369e6ee6274a5af8b1c2bb4b54e33bf8d4c980d0f5"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0004-Use-system-libffi-for-Mac-OS-10.15-and-up.patch"
+    sha256 "c91dc6d66b1a5aca54eec3944e019708da925fe580e81475f3257bd11b08529a"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0005-ctypes-use-the-correct-ABI-for-variadic-functions.patch"
+    sha256 "ad429a3d29bcb073b3d142534882b777b44d08b05a12e8b172747bbf8422fe53"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0006-ctypes-probe-libffi-for-ffi_closure_alloc-and-ffi_pr.patch"
+    sha256 "e87c717a401c89e4518ea5ae68fb7ad8813a084af98fdfe31db2bc43efc2deaf"
+  end
+  patch do
+    url "https://raw.githubusercontent.com/sambrightman/homebrew-patience/fc5ca758d2c4ffacbb11ee046cc44b74329fd63f/patches/python@2/0007-Remove-QuickTime-from-link-args.patch"
+    sha256 "f2a3b73b1660f0443eb75f696660e989667da37728e56f0517ece892e5a6dccb"
   end
 
   def lib_cellar
