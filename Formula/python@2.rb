@@ -6,9 +6,9 @@ class PythonAT2 < Formula
   revision 4
 
   bottle do
-    root_url "https://github.com/sambrightman/homebrew-patience/releases/download/python@2-2.7.18_3"
-    sha256 monterey:     "9baa5bcfe6814662c11e40f5dd958c808e700960fef0a16f1fb41b3dc4894184"
-    sha256 x86_64_linux: "904cb97c1314ba8a94e9ab94b18f82af09f775fee5f53b743f231b3badff5e13"
+    root_url "https://github.com/sambrightman/homebrew-patience/releases/download/python@2-2.7.18_4"
+    sha256 monterey:     "348fcfb012000d9e2023aad36988d65e83e41bc2c1b5eb5a3e1ac879635df9d8"
+    sha256 x86_64_linux: "20ed80f08fd8e73239b51783ecd415246d44912d13cce28edc16a4d3e13864c6"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
